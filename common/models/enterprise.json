@@ -1,5 +1,5 @@
 {
-  "name": "enterprise",
+  "name": "Enterprise",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -20,7 +20,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "investments": {
+      "type": "hasMany",
+      "model": "Investment",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
