@@ -35,19 +35,19 @@
     "dataSource": "db",
     "public": false
   },
-  "user": {
+  "Client": {
     "dataSource": "db",
     "public": true
   },
-  "account": {
+  "Account": {
     "dataSource": "db",
     "public": true
   },
-  "entreprise": {
+  "Enterprise": {
     "dataSource": "db",
     "public": true
   },
-  "investment": {
+  "Investment": {
     "dataSource": "db",
     "public": true
   }

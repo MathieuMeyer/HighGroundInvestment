@@ -1,12 +1,12 @@
 {
-  "name": "user",
+  "name": "Client",
   "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "username": {
+    "email": {
       "type": "string",
       "required": true
     },
@@ -14,13 +14,12 @@
       "type": "string",
       "required": true
     },
-    "id": {
-      "type": "number",
-      "required": true
-    },
     "firsname": {
       "type": "string",
       "required": true
+    },
+    "lastname": {
+      "type": "string"
     },
     "mail": {
       "type": "string",

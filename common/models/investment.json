@@ -1,5 +1,5 @@
 {
-  "name": "investment",
+  "name": "Investment",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -9,18 +9,21 @@
     "sum": {
       "type": "number",
       "required": true
-    },
-    "idAccount": {
-      "type": "number",
-      "required": true
-    },
-    "idEntreprise": {
-      "type": "number",
-      "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "account": {
+      "type": "hasOne",
+      "model": "Account",
+      "foreignKey": ""
+    },
+    "entreprise": {
+      "type": "hasOne",
+      "model": "Enterprise",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
