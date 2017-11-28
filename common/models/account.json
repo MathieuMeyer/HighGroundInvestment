@@ -21,6 +21,11 @@
       "type": "hasMany",
       "model": "Investment",
       "foreignKey": ""
+    },
+    "clients": {
+      "type": "belongsTo",
+      "model": "Client",
+      "foreignKey": ""
     }
   },
   "acls": [],

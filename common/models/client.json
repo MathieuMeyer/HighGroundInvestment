@@ -20,14 +20,16 @@
     },
     "lastname": {
       "type": "string"
-    },
-    "mail": {
-      "type": "string",
-      "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "accounts": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
