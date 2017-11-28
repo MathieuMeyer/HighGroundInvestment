@@ -17,6 +17,14 @@
     "activity": {
       "type": "string",
       "required": true
+    },
+    "description":{
+      "type": "string",
+      "required": true
+    },
+    "localisation":{
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
