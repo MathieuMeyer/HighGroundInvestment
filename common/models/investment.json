@@ -1,0 +1,26 @@
+{
+  "name": "investment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "sum": {
+      "type": "number",
+      "required": true
+    },
+    "idAccount": {
+      "type": "number",
+      "required": true
+    },
+    "idEntreprise": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
