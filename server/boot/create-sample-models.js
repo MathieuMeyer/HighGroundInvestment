@@ -1,136 +1,51 @@
-// Copyright IBM Corp. 2015,2016. All Rights Reserved.
-// Node module: loopback-example-relations
-// This file is licensed under the MIT License.
-// License text available at https://opensource.org/licenses/MIT
+'use strict';
 
-module.exports = function(app) {
-    var Client = app.models.Client;
+var SampleCreator = (app) => {
+	var Client = app.models.Client;
     var Account = app.models.Account;
     var Investment = app.models.Investment;
-    var Enterprise = app.models.Enterprise;
-  
+	var Enterprise = app.models.Enterprise;
+	
+	var clients = require('./data/clients');
+	var accounts = require('./data/accounts');
+	var enterprises = require('./data/enterprises');
 
-    
-    app.dataSources.db.automigrate('Client', function(err) {
-      if (err) throw err;
-  
-      var clients = [
-        {email: 'test@test.fr', password: 'test', firstname: 'Bob', lastname: "L'éponge"},
-        {email: 'test2@test.fr', password: 'test', firstname: 'Jon', lastname: 'Snow'},
-        {email: 'test3@test.fr', password: 'test', firstname: 'Sonic', lastname: 'Le Hérisson'},
-        ];
-      var accounts = [
-        {
-          sold: 3000,
-          name: 'Livret A'
-        },{
-          sold: 600,
-          name: 'Livret A'
-        },{
-          sold: 854,
-          name: 'Livret A'
-        },{
-          sold: 782,
-          name: 'Livret A'
-        }
-      ];
-      var enterprises = [
-        {
-          name: 'Telsa',
-          isSafe: true,
-          activity: 'Automobile',
-          description: "Constructeur automobile",
-          localisation: "Etats-unis",
-          symbol: 'TSLA'
-        },{
-          name: 'Ubisoft',
-          isSafe: true,
-          activity: 'Entertainment',
-          description: "Leader des jeux-vidéos",
-          localisation: "France",
-          symbol: 'UBSFF'
-        },{
-          name: 'Apple',
-          isSafe: true,
-          activity: 'Electronique',
-          description: "Entreprise majeur d'électronique",
-          localisation: "Etats-unis",
-          symbol: 'AAPL'
-        },{
-          name: 'Google',
-          isSafe: true,
-          activity: 'Internet',
-          description: "Moteur de recherche",
-          localisation: "Etat-unis",
-          symbol: 'GOOGL'
-        }
-      ];
-      var investments = [
-        {
-          sum: '800'
-        }
-      ]
-      
-      // Create data
-      Enterprise.create(enterprises[0], function(err, instance) {
-        if (err) return console.error(err);
-        console.log('Entreprise created: ', instance);
-      });
-      Enterprise.create(enterprises[1], function(err, instance) {
-        if (err) return console.error(err);
-        console.log('Entreprise created: ', instance);
-      });
-      Enterprise.create(enterprises[2], function(err, instance) {
-        if (err) return console.error(err);
-        console.log('Entreprise created: ', instance);
-      });
-      Enterprise.create(enterprises[3], function(err, instance) {
-        if (err) return console.error(err);
-        console.log('Entreprise created: ', instance);
-      });
+	// Create companies
+	Array.from(enterprises).forEach((enterprise) => {
+		Enterprise.create(enterprise, (err, instance) => {
+			if (err) { return console.error(err) };
+			console.log('Entreprise created: ', instance.name);
+		});
+	});
 
-      Client.create(clients[0], function(err, instance) {
-        if (err) return console.error(err);
-        console.log('Client created: ', instance);
-        accounts[0].clientId = instance.id;
-        accounts[3].clientId = instance.id;
+	// Create client
+	Client.create(clients[0], (err, instance) => {
+		if (err) { return console.error(err) };
+		console.log('Client created: ', instance.email);
 
-        Account.create(accounts[0], function(err, instance) {
-          if (err) return console.error(err);
-          console.log('Account created: ', instance);
-          investments[0].enterpriseId = instance.id
-          Investment.create(investments[0], function(err, instance){
-            if (err) return console.error(err);
-            console.log('Investment created: ', instance)
-          })
-        });
-        Account.create(accounts[3], function(err, instance) {
-          if (err) return console.error(err);
-          console.log('Account created: ', instance);
-        });
-      });
+		accounts[0].clientId = instance.id;
+		accounts[1].clientId = instance.id;
+		accounts[2].clientId = instance.id;
+		accounts[3].clientId = instance.id;
+		accounts[4].clientId = instance.id;
 
-      Client.create(clients[1], function(err, instance) {
-        if (err) return console.error(err);
-        console.log('Client created: ', instance);
-        accounts[1].clientId = instance.id;
+		// Create accounts
+		accounts.forEach((account) => {
+			Account.create(account, (err, instance) => {
+				if (err) { return console.error(err) };
+				console.log('Account created: ', instance.idTag);
 
-        Account.create(accounts[1], function(err, instance) {
-          if (err) return console.error(err);
-          console.log('Account created: ', instance);
-        });
-      });
+				if (instance.type === "investment") {
+					let sum = Math.round(Math.random() * instance.sold);
+					Investment.create({ sum: sum }, (err, instance) => {
+						if (err) { return console.error(err) };
+						console.log('Investment created: ', instance.sum);
+					});
+				}
+			});
+		});
+	});
+}
 
-      Client.create(clients[2], function(err, instance) {
-        if (err) return console.error(err);
-        console.log('Client created: ', instance);
-        accounts[2].clientId = instance.id;
-
-        Account.create(accounts[2], function(err, instance) {
-          if (err) return console.error(err);
-          console.log('Account created: ', instance);
-        });
-      });
-    });
-  };
+module.exports = SampleCreator;
   

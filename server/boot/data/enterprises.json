@@ -1,0 +1,6 @@
+[
+    { "name": "Telsa", "isSafe": true, "activity": "Automobile", "description": "Constructeur automobile", "localisation": "US", "symbol": "TSLA" },
+    { "name": "Ubisoft", "isSafe": true, "activity": "Entertainment", "description": "Leader des jeux-vidéos", "localisation": "FR", "symbol": "UBSFF" },
+    { "name": "Apple", "isSafe": true, "activity": "Electronics", "description": "Entreprise majeur délectronique", "localisation": "US", "symbol": "AAPL" },
+    { "name": "Google", "isSafe": true, "activity": "Internet", "description": "Moteur de recherche", "localisation": "US", "symbol": "GOOGL" }
+]

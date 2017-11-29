@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import FeatherIcons from 'feather-icons';
 
 import AccountsPage from './pages/AccountsPage';
 import HomePage from './pages/HomePage';
@@ -23,6 +24,10 @@ class App extends Component {
                 }
             ]
         }
+    }
+
+    componentDidUpdate() {
+        FeatherIcons.replace();
     }
 
     render() {

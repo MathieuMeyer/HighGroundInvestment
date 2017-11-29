@@ -88,6 +88,8 @@ section {
 	justify-content: flex-end;
 }
 .account-list > .account > .invest > a {
+	display: inline-flex;
+	align-content: center;
 	padding: 8px 15px;
 	margin: 0px 20px 20px 0px;
 
@@ -105,17 +107,14 @@ section {
 
 /* --- Investment Page --- */
 .account-status > .titles { text-transform: uppercase; text-align: center; }
-.account-status > .titles > .left-title { float: left; }
-.account-status > .titles > .right-title { float: right; }
+.account-status > .titles > .left-title { width: 100px; float: left; text-align: left; }
+.account-status > .titles > .right-title { width: 100px; float: right; text-align: right; }
 
 .account-status > .values { font-size: 11px; text-align: center; }
-.account-status > .values > .left-value { float: left; }
-.account-status > .values > .right-value { float: right; }
+.account-status > .values > .left-value { width: 100px; float: left; text-align: left; }
+.account-status > .values > .right-value { width: 100px; float: right; text-align: right; }
 
 .account-status > .progress {
-	display: inline-flex;
-	align-items: center;
-	justify-items: center;
 	height: 30px;
 }
 .account-status > .invested {
