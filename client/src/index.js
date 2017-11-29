@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import FeatherIcons from 'feather-icons';
 
 import './style/index.css';
 
@@ -12,4 +13,4 @@ ReactDOM.render(
 	</Router>,
 	document.getElementById('root')
 );
-
+FeatherIcons.replace();

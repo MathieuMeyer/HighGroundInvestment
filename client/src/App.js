@@ -1,35 +1,36 @@
 import React, { Component } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import CompanyDetails from './components/CompanyDetails';
-import ClientStatus from './components/ClientStatus';
-import Investments from './components/Investments';
-import Navigation from './components/Navigation';
+import AccountsPage from './pages/AccountsPage';
+import HomePage from './pages/HomePage';
+import InvestPage from './pages/InvestPage';
 
 class App extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            investedGlobal: 0 ,
-            toInvestGlobal: 50000
+            accounts: [
+                {
+                    idTag: "7O8AIJ7O9JH7WSXH9J8W7HX9IJWSZX",
+                    sold: 3000,
+                    type: "check"
+                },
+                {
+                    idTag: "GH7UD9G8HAUS7DGH89ASU7GD8HAS",
+                    sold: 8000,
+                    type: "investment"
+                }
+            ]
         }
     }
 
     render() {
         return (
             <Switch>
-                <Route exact path="/">
-                    <Navigation />
-                </Route>
-                <Route path="/accounts">
-                    <div>
-                        <Navigation connected />
-                        <CompanyDetails name="MaSuperEntreprise" sector="Energie" localization="Arras" category="Zone sûre" description="Ceci est une description"></CompanyDetails>
-                        <ClientStatus investedGlobal={this.state.investedGlobal} toInvestGlobal={this.state.toInvestGlobal}></ClientStatus>
-                        <Investments toInvestGlobal={this.state.toInvestGlobal}></Investments>
-                    </div>
-                </Route>
+                <Route exact path="/" render={() => <HomePage />} />
+                <Route path="/accounts" render={() => <AccountsPage accounts={this.state.accounts} />} />
+                <Route path="/invest/account/:idTag" render={(router) => <InvestPage idTag={router.match.params.idTag} />} />
                 <Redirect from='/disconnect' to='/'/>
             </Switch>
         );

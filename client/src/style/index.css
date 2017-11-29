@@ -44,3 +44,83 @@ nav > ul > li > a {
 }
 
 /* --- Content Layout --- */
+section {
+	padding: 20px 50px;
+}
+
+/* --- Accounts --- */
+.account-list {
+	margin: 0px;
+	padding: 0px;
+}
+.account-list > .account {
+	background-color: #FAFAFA;
+}
+.account-list > .account > .details {
+	display: flex;
+
+	margin: 20px 0px 0px 0px;
+	padding: 10px 20px;
+}
+.account-list > .account > .details > .info {
+	margin: 5px 0px;
+}
+.account-list > .account > .details > .sold {
+	flex-grow: 100;
+	align-self: flex-start;
+	padding-top: 5px;
+
+	font-size: 20px;
+	text-align: right;
+}
+.account-list > .account > .details > .info > div > label {
+	display: inline-block;
+	width: 100px;
+	text-transform: uppercase;
+}
+.account-list > .account > .details > .sold > label {
+	display: block;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+.account-list > .account > .invest {
+	display: flex;
+	justify-content: flex-end;
+}
+.account-list > .account > .invest > a {
+	padding: 8px 15px;
+	margin: 0px 20px 20px 0px;
+
+	text-align: right;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	font-size: 20px;
+	background-color: #42B36E;
+}
+.account-list > .account > .invest > a > svg {
+	width: 20px;
+	margin-right: 10px;
+}
+
+/* --- Investment Page --- */
+.account-status > .titles { text-transform: uppercase; text-align: center; }
+.account-status > .titles > .left-title { float: left; }
+.account-status > .titles > .right-title { float: right; }
+
+.account-status > .values { font-size: 11px; text-align: center; }
+.account-status > .values > .left-value { float: left; }
+.account-status > .values > .right-value { float: right; }
+
+.account-status > .progress {
+	display: inline-flex;
+	align-items: center;
+	justify-items: center;
+	height: 30px;
+}
+.account-status > .invested {
+	background-color: #42B36E;
+}
+.account-status > .remaining {
+	background-color: #FAFAFA;
+}
