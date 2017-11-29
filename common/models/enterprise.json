@@ -25,6 +25,10 @@
     "localisation": {
       "type": "string",
       "required": true
+    },
+    "symbol": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],
