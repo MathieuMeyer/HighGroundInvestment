@@ -7,7 +7,7 @@ class ClientAccountsList extends Component {
         return (
             <ul className="account-list">
                 {this.props.accounts.map((account) => {
-                    return (<ClientAccount key={account.number} account={account} />);
+                    return (<ClientAccount key={account.idTag} account={account} />);
                 })}
             </ul>
         );
