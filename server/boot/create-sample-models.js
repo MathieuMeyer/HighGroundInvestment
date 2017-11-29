@@ -36,11 +36,33 @@ module.exports = function(app) {
       ];
       var enterprises = [
         {
-          name: 'Samsung',
+          name: 'Telsa',
+          isSafe: true,
+          activity: 'Automobile',
+          description: "Constructeur automobile",
+          localisation: "Etats-unis",
+          symbol: 'TSLA'
+        },{
+          name: 'Ubisoft',
+          isSafe: true,
+          activity: 'Entertainment',
+          description: "Leader des jeux-vidéos",
+          localisation: "France",
+          symbol: 'UBSFF'
+        },{
+          name: 'Apple',
           isSafe: true,
           activity: 'Electronique',
           description: "Entreprise majeur d'électronique",
-          localisation: "Corée"
+          localisation: "Etats-unis",
+          symbol: 'AAPL'
+        },{
+          name: 'Google',
+          isSafe: true,
+          activity: 'Internet',
+          description: "Moteur de recherche",
+          localisation: "Etat-unis",
+          symbol: 'GOOGL'
         }
       ];
       var investments = [
@@ -53,7 +75,19 @@ module.exports = function(app) {
       Enterprise.create(enterprises[0], function(err, instance) {
         if (err) return console.error(err);
         console.log('Entreprise created: ', instance);
-      })
+      });
+      Enterprise.create(enterprises[1], function(err, instance) {
+        if (err) return console.error(err);
+        console.log('Entreprise created: ', instance);
+      });
+      Enterprise.create(enterprises[2], function(err, instance) {
+        if (err) return console.error(err);
+        console.log('Entreprise created: ', instance);
+      });
+      Enterprise.create(enterprises[3], function(err, instance) {
+        if (err) return console.error(err);
+        console.log('Entreprise created: ', instance);
+      });
 
       Client.create(clients[0], function(err, instance) {
         if (err) return console.error(err);
