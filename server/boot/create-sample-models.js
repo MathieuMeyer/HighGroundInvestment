@@ -10,6 +10,7 @@ module.exports = function(app) {
     var Enterprise = app.models.Enterprise;
   
 
+    
     app.dataSources.db.automigrate('Client', function(err) {
       if (err) throw err;
   
