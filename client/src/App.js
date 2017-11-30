@@ -6,6 +6,8 @@ import AccountsPage from './pages/AccountsPage';
 import HomePage from './pages/HomePage';
 import InvestPage from './pages/InvestPage';
 
+import CompanyDetails from './components/CompanyDetails';
+
 class App extends Component {
     componentWillMount() {
         FeatherIcons.replace();
@@ -16,6 +18,9 @@ class App extends Component {
             <Switch>
                 <Route exact path="/" render={() => <HomePage />} />
                 <Route path="/accounts" render={() => <AccountsPage />} />
+                
+                <Route path="/details" render={() => <CompanyDetails />} />
+                
                 <Route path="/invest/account/:idTag" render={(router) => <InvestPage idTag={router.match.params.idTag} />} />
                 <Redirect from='/disconnect' to='/'/>
             </Switch>
