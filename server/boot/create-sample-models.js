@@ -37,7 +37,8 @@ var SampleCreator = (app) => {
 
 				if (instance.type === "investment") {
 					let sum = Math.round(Math.random() * instance.sold);
-					Investment.create({ sum: sum, accountId: instance.id }, (err, instance) => {
+					let selectedEnterprise = Math.floor(Math.random() * 4) + 1;  
+					Investment.create({ sum: sum, accountId: instance.id, enterpriseId: selectedEnterprise}, (err, instance) => {
 						if (err) { return console.error(err) };
 						console.log('Investment created: ', instance.sum);
 					});
