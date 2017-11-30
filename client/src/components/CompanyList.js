@@ -7,7 +7,13 @@ class CompanyList extends Component {
         return (
             <div className="company-list">
                 {this.props.companies.map((company) => {
-                    return (<CompanyListElement key={company.symbol} company={company} />);
+                    var somme = 0;
+                    {this.props.investments.map((investment) => {
+                        if (investment["enterpriseId"] == company.id){
+                            somme += investment.sum;
+                        }
+                    })}
+                    return (<CompanyListElement key={company.symbol} company={company} somme={somme} />);
                 })}
             </div>
         );

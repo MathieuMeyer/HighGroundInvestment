@@ -11,6 +11,7 @@ class CompanyListElement extends Component {
                 <div className="presentation">
                     <label className="company-name">{this.props.company.name}</label> 
                     <label className="company-activity">{this.props.company.activity}</label>
+                    <label>{this.props.somme}</label>
                 </div>
                 <StockGraph symbol={this.props.company.symbol} />
             </div>

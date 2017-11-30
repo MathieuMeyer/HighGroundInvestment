@@ -27,6 +27,7 @@ class AccountsPage extends Component {
         axios.get(config.apiUrl + '/enterprises')
             .then((response) => { this.setState({ companies: response.data }); })
             .catch((error) => { console.log(error); });
+        console.log(this.state);
     }
 
     render() {
@@ -43,7 +44,7 @@ class AccountsPage extends Component {
 
                     { this.state.companies.length === 0 && "Loading..." }
                     { this.state.companies.length > 0 && 
-                        <CompanyList companies={this.state.companies} />
+                        <CompanyList companies={this.state.companies} investments={this.state.account.investments} />
                     }
                 </section>
             </div>
