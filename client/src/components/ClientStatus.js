@@ -9,7 +9,7 @@ class ClientStatus extends Component {
         let investedPercent = this.props.totalInvested / this.props.sold * 100;
 
         return ([
-            <div className="titles">
+            <div key="titles" className="titles">
                 <div className="labels">
                     Total
                     <div className="left-title">Investi</div>
@@ -21,10 +21,10 @@ class ClientStatus extends Component {
                     <div className="right-value">{ formatCurrency(this.props.sold - this.props.totalInvested, formatOptions) }</div>
                 </div>
             </div>,
-            <div className="account-status">
+            <div key="status" className="account-status">
                 <div className="progress invested" style={{ width: investedPercent.toString() + '%' }}></div>
             </div>,
-            <div className="ClientStatusAddNewMoney">
+            <div key="investment" className="ClientStatusAddNewMoney">
                 <label>Ajouter argent à investir</label>
                 <input></input>
                 <button onClick={this.savingsHandler}>Ajouter à l'épargne</button>

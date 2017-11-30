@@ -19,8 +19,11 @@ class AccountsPage extends Component {
         
         axios.get(config.apiUrl + 'accounts?filter[where][idTag]=' + this.props.idTag + '&filter[include][investments]')
             .then((response) => {
-                this.setState({ totalInvested: response.data[0].investments.length > 1 ? response.data[0].investments.reduce((a, b) => { return a.sum + b.sum }) : response.data[0].investments[0].sum });
                 this.setState({ account: response.data[0] });
+                this.setState({ totalInvested: this.state.account.investments.length > 1 ? this.state.account.investments.reduce((a, b) => { return a + b.sum }, 0) : this.state.account.investments[0].sum });
+
+                console.log(this.state.account);
+                console.log(response.data[0].investments.reduce((result, investment) => { return result + investment.sum }));
             })
             .catch((error) => { console.log(error); });
 
