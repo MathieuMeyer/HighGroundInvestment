@@ -17,9 +17,6 @@ class Investments extends Component {
                         <option value="">Localisation</option>
                     </select>
                 </div>
-                <div className="InvestmentsCompanyList">
-                    <CompanyListElement name="MaSuperEntreprise" category="Zone sûre" investedCompany="1000"></CompanyListElement>
-                </div>
             </div>
         );
     }

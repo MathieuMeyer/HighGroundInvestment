@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../config.json';
+import React, { Component } from 'react';
 
 import ClientAccountsList from '../components/ClientAccountsList';
 import Navigation from '../components/Navigation';
