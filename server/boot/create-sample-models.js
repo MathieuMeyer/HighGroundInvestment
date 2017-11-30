@@ -36,12 +36,14 @@ var SampleCreator = (app) => {
 				console.log('Account created: ', instance.idTag);
 
 				if (instance.type === "investment") {
-					let sum = Math.round(Math.random() * instance.sold);
-					let selectedEnterprise = Math.floor(Math.random() * 4) + 1;  
-					Investment.create({ sum: sum, accountId: instance.id, enterpriseId: selectedEnterprise}, (err, instance) => {
-						if (err) { return console.error(err) };
-						console.log('Investment created: ', instance.sum);
-					});
+					for(var i = 0; i<3; i++){
+						let sum = Math.round(Math.random() * instance.sold);
+						let selectedEnterprise = Math.floor(Math.random() * 4) + 1;  
+						Investment.create({ sum: sum, accountId: instance.id, enterpriseId: selectedEnterprise}, (err, instance) => {
+							if (err) { return console.error(err) };
+							console.log('Investment created: ', instance.sum);
+						});
+					}
 				}
 			});
 		});
