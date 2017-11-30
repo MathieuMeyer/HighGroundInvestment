@@ -115,7 +115,7 @@ section {
 .titles > .values > .right-value { width: 100px; float: right; text-align: right; }
 
 .account-status { background-color: #FAFAFA; }
-.account-status > .progress { height: 30px; }
+.account-status > .progress { height: 30px; max-width: 100%; }
 .account-status > .invested { background-color: #42B36E; }
 
 .company-list > .company { margin: 20px 0px; }

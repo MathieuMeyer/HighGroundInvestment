@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CompanyListElement from './CompanyListElement';
 
 class Investments extends Component {
     showInvestedCompanies() { }
