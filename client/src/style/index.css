@@ -106,20 +106,19 @@ section {
 }
 
 /* --- Investment Page --- */
-.account-status > .titles { text-transform: uppercase; text-align: center; }
-.account-status > .titles > .left-title { width: 100px; float: left; text-align: left; }
-.account-status > .titles > .right-title { width: 100px; float: right; text-align: right; }
+.titles > .labels { text-transform: uppercase; text-align: center; }
+.titles > .labels > .left-title { width: 100px; float: left; text-align: left; }
+.titles > .labels > .right-title { width: 100px; float: right; text-align: right; }
 
-.account-status > .values { font-size: 11px; text-align: center; }
-.account-status > .values > .left-value { width: 100px; float: left; text-align: left; }
-.account-status > .values > .right-value { width: 100px; float: right; text-align: right; }
+.titles > .values { font-size: 11px; text-align: center; }
+.titles > .values > .left-value { width: 100px; float: left; text-align: left; }
+.titles > .values > .right-value { width: 100px; float: right; text-align: right; }
 
-.account-status > .progress {
-	height: 30px;
-}
-.account-status > .invested {
-	background-color: #42B36E;
-}
-.account-status > .remaining {
-	background-color: #FAFAFA;
-}
+.account-status { background-color: #FAFAFA; }
+.account-status > .progress { height: 30px; }
+.account-status > .invested { background-color: #42B36E; }
+
+.company-list > .company { margin: 20px 0px; }
+.company-list > .company > .presentation > label { display: block; }
+.company-list > .company > .presentation > .company-name { font-weight: bold; font-size: 20px; }
+.company-list > .company > .presentation > .company-activity { font-size: 11px; color: #999999; }

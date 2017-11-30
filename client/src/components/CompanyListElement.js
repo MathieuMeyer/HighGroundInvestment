@@ -5,10 +5,10 @@ class CompanyListElement extends Component {
 
     render() {
         return (
-            <div>
-                <div className="companyListPresentation">
-                    <p>Nom: {this.props.name}</p> 
-                    <p>Catégorie: {this.props.category}</p>
+            <div className="company">
+                <div className="presentation">
+                    <label className="company-name">{this.props.company.name}</label> 
+                    <label className="company-activity">{this.props.company.activity}</label>
                 </div>
                 <div className="companyListInvestment">
                     <p>Argent déjà investi: {this.props.investedCompany}</p>
