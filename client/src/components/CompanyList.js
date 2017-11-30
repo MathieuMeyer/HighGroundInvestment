@@ -13,7 +13,9 @@ class CompanyList extends Component {
                             somme += investment.sum;
                         }
                     })}
-                    return (<CompanyListElement key={company.symbol} company={company} somme={somme} />);
+                    if(somme > 0){ 
+                        return (<CompanyListElement key={company.symbol} company={company} somme={somme} />);
+                    }
                 })}
             </div>
         );
