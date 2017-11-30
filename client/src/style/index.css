@@ -123,3 +123,7 @@ section {
 .company-list > .company > .presentation > .company-name { font-weight: bold; font-size: 20px; }
 .company-list > .company > .presentation > .company-activity { font-size: 11px; color: #999999; }
 .company-list > .company > .ct-chart { width: 80%; margin-left: auto; margin-right: auto; }
+.company-list > .company > .ct-chart > .ct-chart-line > g > .ct-series > .ct-area { fill: #45D893; }
+.company-list > .company > .ct-chart > .ct-chart-line > g > .ct-series > .ct-line { stroke: #45D893; }
+.company-list > .company > .ct-chart > .ct-chart-line > g > .ct-series > .ct-point { stroke: #4F9564; }
+.company-list > .company > .ct-chart > .ct-chart-line > .ct-labels > foreignObject > .ct-horizontal { white-space: nowrap; }

@@ -21,7 +21,6 @@ class StockGraph extends Component {
                 var labels = [];
                 var series = [[]];
                 var stocks = response.data.stocks["Time Series (Daily)"];
-                console.log(response);
                 
                 Object.keys(stocks).forEach((day) => {
                     labels.push(day);
