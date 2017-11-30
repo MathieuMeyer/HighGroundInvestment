@@ -2,7 +2,6 @@ import axios from 'axios';
 import config from '../config.json';
 import React, { Component } from 'react';
 
-import CompanyDetails from '../components/CompanyDetails';
 import CompanyList from '../components/CompanyList';
 import ClientStatus from '../components/ClientStatus';
 import Investments from '../components/Investments';
@@ -39,7 +38,6 @@ class AccountsPage extends Component {
                     { this.state.account === undefined && "Loading..." }
                     { this.state.account !== undefined && [
                         <ClientStatus totalInvested={this.state.totalInvested} sold={this.state.account.sold} />,
-                        <CompanyDetails name="MaSuperEntreprise" sector="Energie" localization="Arras" category="Zone sûre" description="Ceci est une description"></CompanyDetails>,
                         <Investments toInvestGlobal={10}></Investments>
                     ] }
 
