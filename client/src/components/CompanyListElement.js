@@ -13,7 +13,7 @@ class CompanyListElement extends Component {
     }
 
     confirmInvestment(event) {
-        axios.post(config.apiUrl + '/Investment', {
+        axios.post(config.apiUrl + 'investments', {
             sum: this.state.sum,
             accountId: this.props.account,
             enterpriseId: this.props.company.id
@@ -39,7 +39,7 @@ class CompanyListElement extends Component {
                 <div className="investmentConfirmation">
                     <label>Combien souhaitez-vous investir ?</label>
                     <input name="investment" type="number" onChange={(event) => { this.changeHandler(event) }} />
-                    <button onClick={(event) => { this.confirmInvestment(event) }}></button>
+                    <button onClick={(event) => { this.confirmInvestment(event) }}>Investir</button>
                 </div>
                 <StockGraph symbol={this.props.company.symbol} />
             </div>
