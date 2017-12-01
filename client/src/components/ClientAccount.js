@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
 import formatCurrency from 'format-currency';
 
 class ClientAccount extends Component {
     render() {
         let formatOptions = { format: '%v %s', symbol: '€', locale: 'fr-FR' }
+        
         return (
             <div className="account">
                 <div className="details">

@@ -21,16 +21,12 @@ class AccountsPage extends Component {
             .then((response) => {
                 this.setState({ account: response.data[0] });
                 this.setState({ totalInvested: this.state.account.investments.length > 1 ? this.state.account.investments.reduce((a, b) => { return a + b.sum }, 0) : this.state.account.investments[0].sum });
-
-                console.log(this.state.account);
-                console.log(response.data[0].investments.reduce((result, investment) => { return result + investment.sum }));
             })
             .catch((error) => { console.log(error); });
 
         axios.get(config.apiUrl + '/enterprises')
             .then((response) => { this.setState({ companies: response.data }); })
             .catch((error) => { console.log(error); });
-        console.log(this.state);
     }
 
     render() {
