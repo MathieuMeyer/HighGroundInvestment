@@ -14,7 +14,7 @@ class CompanyList extends Component {
                         }
                     })}
                     if(somme > 0){ 
-                        return (<CompanyListElement key={company.symbol} company={company} somme={somme} />);
+                        return (<CompanyListElement key={company.symbol} account={this.props.account} company={company} somme={somme} />);
                     }
                 })}
             </div>

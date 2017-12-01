@@ -43,7 +43,7 @@ class AccountsPage extends Component {
 
                     { this.state.companies.length === 0 && "Loading..." }
                     { this.state.companies.length > 0 && 
-                        <CompanyList companies={this.state.companies} investments={this.state.account.investments} />
+                        <CompanyList companies={this.state.companies} account={this.state.account.id} investments={this.state.account.investments} />
                     }
                 </section>
             </div>
